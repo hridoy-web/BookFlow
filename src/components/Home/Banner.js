@@ -26,7 +26,7 @@ const Banner = () => {
        Explore a vast collection of books across various categories and start your digital reading journey today.
       </p>
 
-     <Link href={'/all-books'} > <button className="btn btn-lg rounded-full bg-linear-to-r from-violet-500 to-pink-500 text-white transition-all duration-500 hover:from-violet-600 hover:to-purple-700 shadow-xl hover:scale-95 ">Browse Now</button></Link>
+     <Link href={'/allbooks'} > <button className="btn btn-lg rounded-full bg-linear-to-r from-violet-500 to-pink-500 text-white transition-all duration-500 hover:from-violet-600 hover:to-purple-700 shadow-xl hover:scale-95 ">Browse Now</button></Link>
 
     </div>
   </div>

@@ -1,20 +1,13 @@
 import Image from "next/image";
 
 const BooksDetailsPage = async ({ params }) => {
-
     const { id } = await params;
-
     //    console.log(id);
-
     const res = await fetch('https://book-flow-seven.vercel.app/booksData.json');
     const allBooksData = await res.json();
 
-
     const book = allBooksData.find(item => String(item.id) === String(id))
-
-
     // console.log(book);
-
 
     return (
         <div className="w-11/12 mx-auto py-12 min-h-screen">
@@ -34,11 +27,9 @@ const BooksDetailsPage = async ({ params }) => {
 
           <div className="lg:w-2/3 p-8 lg:p-12 flex flex-col justify-center">
             <div className="flex items-center mb-4">
-
               <span className="badge badge-primary badge-outline px-4 py-3 font-semibold uppercase tracking-wider">
                 {book.category}
-              </span>
-             
+              </span>           
             </div>
 
             <h1 className="text-3xl md:text-4xl font-extrabold mb-4 text-gray-800 leading-tight">

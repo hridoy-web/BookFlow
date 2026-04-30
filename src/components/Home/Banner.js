@@ -4,7 +4,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div className="hero bg-linear-to-r from-primary/20 to-secondary/20 min-h-[300px] md:min-h-[500px] my-8 rounded-2xl">
+        <div className="hero bg-linear-to-r from-primary/20 to-secondary/20 min-h-[300px] md:min-h-[500px] my-8 md:my-12 rounded-2xl">
 
   <div className="hero-content flex-col md:flex-row-reverse py-10">
 

@@ -19,9 +19,9 @@ const BookCard = ({books}) => {
       <div className="card-body p-4">
         <h2 className="card-title text-lg font-bold">{title}</h2>
         <p className="text-sm opacity-70">By {author}</p>
-        <div className="badge badge-secondary badge-outline">{category}</div>
+        <div className="badge badge-soft badge-primary badge-outline">{category}</div>
         <div className="card-actions mt-4">
-          <Link href={`/allbooks/${id}`}><button className="btn font-bold w-full">View Details</button></Link>
+          <Link href={`/allbooks/${id}`} className="btn  font-bold w-full" >View Details</Link>
         </div>
       </div>
     </div>

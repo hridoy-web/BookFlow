@@ -15,7 +15,7 @@ const Banner = () => {
     alt="hero banner"
     width={700}
     height={400}
-    className='shadow-xl rounded-xl'
+    className='shadow-xl rounded-2xl hover:scale-105 duration-500 cursor-pointer transition-all'
   />
 </div>
 

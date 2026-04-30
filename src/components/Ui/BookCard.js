@@ -1,9 +1,10 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 const BookCard = ({books}) => {
 
-    const {image_url, author, category, title } = books;
+    const {image_url, author, category, title, id } = books;
 
     return (
         <div className="card bg-base-100 shadow-md border border-gray-200">
@@ -20,7 +21,7 @@ const BookCard = ({books}) => {
         <p className="text-sm opacity-70">By {author}</p>
         <div className="badge badge-secondary badge-outline">{category}</div>
         <div className="card-actions mt-4">
-          <button className="btn font-bold w-full">View Details</button>
+          <Link href={`/allbooks/${id}`}><button className="btn font-bold w-full">View Details</button></Link>
         </div>
       </div>
     </div>

@@ -3,10 +3,9 @@ import Link from "next/link";
 
 const Navbar = () => {
 
-
 const navLinkStyles = <>
 <li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/'}>Home</Link></li>
-<li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/'}>All Books</Link></li>
+<li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/allbooks'}>All Books</Link></li>
 <li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/'}>Profile</Link></li>
 </>
 

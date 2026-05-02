@@ -1,13 +1,10 @@
 "use client"
-
 import { authClient } from "@/lib/auth-client";
-import { router } from "better-auth/api";
 import Image from "next/image";
 import Link from "next/link";
 
 
 const Navbar = () => {
-
 
   const userData = authClient.useSession();
   const user = userData.data?.user;
@@ -17,11 +14,16 @@ const Navbar = () => {
   const navLinkStyles = <>
     <li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/'}>Home</Link></li>
     <li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/allbooks'}>All Books</Link></li>
-    <li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/'}>Profile</Link></li>
+    <li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/profile'}>Profile</Link></li>
   </>
 
+  const handleLogOut = async () => {
+    await authClient.signOut();
+    window.location.href = "/";
+  }
+
   return (
-    <div className="bg-base-100 shadow-sm">
+    <div className="bg-base-100 shadow-sm ">
 
       <div className="navbar w-11/12 mx-auto">
         <div className="navbar-start gap-2 md:gap-0">
@@ -50,16 +52,34 @@ const Navbar = () => {
 
         {user && (
           <div className="navbar-end">
-            <div className="avatar online">
-              <div className="w-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="m-1 cursor-pointer">
                 <Image
                   src={user?.image}
                   alt={user?.name}
                   width={48}
                   height={48}
-                  className="rounded-full object-cover"
+                  className="border-2 border-blue-500 rounded-full"
                 />
               </div>
+
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-base-100 rounded-box z-[100] p-4 shadow-2xl border border-gray-200 mt-3 absolute right-0 left-auto"
+                style={{ right: '0px' }}
+              >
+                <li className="mb-2">
+                  <p className="font-bold leading-tight">Name: <span className="text-gray-500">{user?.name}</span></p>
+                  <p className="font-bold">Email: <span className="text-gray-500">{user?.email}</span></p>
+                </li>
+
+                <div className="divider "></div>
+
+                <Link href={'/profile'}><button className="btn text-primary font-extrabold w-full mb-3">My Profile</button></Link>
+
+                <button onClick={handleLogOut} className="btn text-red-600 font-bold w-full"
+                >LogOut</button>
+              </ul>
             </div>
           </div>
         )}

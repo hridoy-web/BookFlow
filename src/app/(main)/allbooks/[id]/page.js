@@ -1,4 +1,8 @@
+
+
+import BorrowButton from "@/components/Ui/BorrowButton";
 import Image from "next/image";
+import { ToastContainer } from "react-toastify";
 
 const BooksDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -7,7 +11,9 @@ const BooksDetailsPage = async ({ params }) => {
     const allBooksData = await res.json();
 
     const book = allBooksData.find(item => String(item.id) === String(id))
+    
     // console.log(book);
+
 
     return (
         <div className="w-11/12 mx-auto py-12 min-h-screen">
@@ -61,9 +67,7 @@ const BooksDetailsPage = async ({ params }) => {
             </div>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <button className="btn btn-primary btn-lg px-12 shadow-lg hover:scale-105 transition-transform duration-200">
-            Read Now
-              </button>
+              <BorrowButton/>
               <button className="btn btn-outline btn-lg px-8 hover:bg-gray-100 transition-colors ">
                 Add to Wishlist
               </button>
@@ -72,6 +76,7 @@ const BooksDetailsPage = async ({ params }) => {
 
         </div>
       </div>
+      <ToastContainer/>
     </div>
     );
 };

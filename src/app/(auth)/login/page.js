@@ -1,19 +1,100 @@
-
+"use client";
+import { authClient } from "@/lib/auth-client";
+import Link from "next/link";
+import { useRouter } from "next/navigation"
+import { FcGoogle } from "react-icons/fc";
+import { IoMdStar } from "react-icons/io";
+import { toast, ToastContainer } from "react-toastify";
 
 const LoginPage = () => {
+
+    const router = useRouter();
+
+    const handleLogin = async (e) => {
+
+        e.preventDefault();
+
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        const { data, error } = await authClient.signIn.email({  
+           email,
+           password,
+        });
+
+       if(error){
+        toast.warning(error.message);
+        return;
+       } else{
+        toast.success('Login Successful')
+
+        setTimeout(()=>{
+            router.push('/')
+        }, 1000)
+       }
+
+    };
+
+   const handleGoogleLogin = async () =>{
+   await authClient.signIn.social({
+    provider: "google",
+   })
+   }
+
     return (
-        <div className="w-11/12 mx-auto min-h-screen">
-            <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4">
-  <legend className="fieldset-legend">Login</legend>
+        <div className="min-h-screen flex items-center justify-center bg-base-200 py-16 px-4">
+            <div className="card w-full max-w-md shadow-lg bg-base-100">
+                <div className="card-body">
 
-  <label className="label">Email</label>
-  <input type="email" className="input" placeholder="Email" />
+                    <h2 className="text-3xl font-bold text-center text-primary mb-6">Login Now</h2>
 
-  <label className="label">Password</label>
-  <input type="password" className="input" placeholder="Password" />
+                    <form onSubmit={handleLogin} className="space-y-4">
 
-  <button className="btn btn-neutral mt-4">Login</button>
-</fieldset>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="flex gap-1 items-center font-semibold"><IoMdStar size={10} className="text-red-500" /> Email</span>
+                            </label>
+                            <br />
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                className="input input-bordered w-full"
+                                required
+                            />
+                        </div>
+
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="flex items-center gap-1 font-semibold"><IoMdStar size={10} className="text-red-500" /> Password:</span>
+                            </label>
+                            <br />
+                            <input
+                                type="password"
+                                name="password"
+                                placeholder="Enter Your Password"
+                                className="input input-bordered w-full"
+                                required
+                            />
+                        </div>
+
+                        <div className="form-control mt-6">
+                            <button type="submit" className="btn btn-primary font-bold text-lg w-full">
+                                Login
+                            </button>
+                        </div>
+                    </form>
+
+                    <div className="divider">OR</div>
+
+                    <button onClick={handleGoogleLogin} className="btn btn-outline btn-primary w-full gap-2">
+                        <FcGoogle size={20} /> Continue with Google
+                    </button>
+
+                    <p className="text-center mt-4 text-base font-medium">Dont have an account? <Link href="/register" className="text-primary font-bold hover:underline">Register Now </Link> </p>
+                </div>
+            </div>
+            <ToastContainer />
         </div>
     );
 };

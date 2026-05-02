@@ -41,13 +41,19 @@ const RegisterPage = () => {
 
     };
 
+   const handleGoogleSignIn = async () =>{
+   await authClient.signIn.social({
+    provider: "google",
+    callbackURL: "/"
+   })
+   }
+
     return (
         <div className="min-h-screen flex items-center justify-center bg-base-200 py-16 px-4">
             <div className="card w-full max-w-md shadow-lg bg-base-100">
                 <div className="card-body">
 
                     <h2 className="text-3xl font-bold text-center text-primary mb-6">Register Now</h2>
-
 
                     <form onSubmit={handleRegister} className="space-y-4">
                         <div className="form-control">
@@ -115,16 +121,11 @@ const RegisterPage = () => {
 
                     <div className="divider">OR</div>
 
-                    <button className="btn btn-outline btn-primary w-full gap-2">
+                    <button onClick={handleGoogleSignIn} className="btn btn-outline btn-primary w-full gap-2">
                         <FcGoogle size={20} /> Continue with Google
                     </button>
 
-                    <p className="text-center mt-4 text-base font-medium">
-                        Already have an account?{" "}
-                        <Link href="/login" className="text-primary font-bold hover:underline">
-                            Login
-                        </Link>
-                    </p>
+                    <p className="text-center mt-4 text-base font-medium">Already have an account? <Link href="/login" className="text-primary font-bold hover:underline">Login</Link> </p>
                 </div>
             </div>
             <ToastContainer />

@@ -2,9 +2,12 @@
 import { authClient } from "@/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 
 const Navbar = () => {
+
+  const pathName = usePathname();
 
   const userData = authClient.useSession();
   const user = userData.data?.user;
@@ -12,9 +15,15 @@ const Navbar = () => {
   // console.log(user.email);
 
   const navLinkStyles = <>
-    <li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/'}>Home</Link></li>
-    <li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/allbooks'}>All Books</Link></li>
-    <li className="text-gray-600 font-bold hover:text-blue-500 transition-all duration-300"><Link href={'/profile'}>Profile</Link></li>
+    <li className={`font-bold transition-all duration-300 ${pathName === '/' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-500'}`}>
+      <Link href={'/'}>Home</Link>
+    </li>
+    <li className={`font-bold transition-all duration-300 ${pathName === '/allbooks' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-500'}`}>
+      <Link href={'/allbooks'}>All Books</Link>
+    </li>
+    <li className={`font-bold transition-all duration-300 ${pathName=== '/profile' ? 'text-blue-600' : 'text-gray-600 hover:text-blue-500'}`}>
+      <Link href={'/profile'}>Profile</Link>
+    </li>
   </>
 
   const handleLogOut = async () => {
@@ -53,27 +62,27 @@ const Navbar = () => {
         {user && (
           <div className="navbar-end">
             <div className="dropdown dropdown-end ">
-              <div 
-        tabIndex={0} 
-        role="button" 
-        className="btn btn-ghost btn-circle avatar online shadow-md border-2 border-primary"
-      >
-        <div className="w-10 md:w-12 rounded-full bg-neutral text-neutral-content flex items-center justify-center overflow-hidden">
-          {user?.image ? (
-            <Image
-              src={user?.image}
-              alt={user?.name}
-              width={48}
-              height={48}
-              className="aspect-square object-cover"
-            />
-          ) : (
-            <span className="text-xl font-bold uppercase">
-              {user?.name?.charAt(0)}
-            </span>
-          )}
-        </div>
-      </div>
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost btn-circle avatar online shadow-md border-2 border-primary"
+              >
+                <div className="w-10 md:w-12 rounded-full bg-neutral text-neutral-content flex items-center justify-center overflow-hidden">
+                  {user?.image ? (
+                    <Image
+                      src={user?.image}
+                      alt={user?.name}
+                      width={48}
+                      height={48}
+                      className="aspect-square object-cover"
+                    />
+                  ) : (
+                    <span className="text-xl font-bold uppercase">
+                      {user?.name?.charAt(0)}
+                    </span>
+                  )}
+                </div>
+              </div>
 
               <ul
                 tabIndex={0}

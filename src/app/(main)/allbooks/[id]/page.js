@@ -6,7 +6,9 @@ import { ToastContainer } from "react-toastify";
 
 const BooksDetailsPage = async ({ params }) => {
     const { id } = await params;
+
     //    console.log(id);
+    
     const res = await fetch('https://book-flow-seven.vercel.app/booksData.json');
     const allBooksData = await res.json();
 

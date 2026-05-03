@@ -1,22 +1,35 @@
 import BookCard from "@/components/Ui/BookCard";
+import BookSidebar from "@/components/Ui/BookSidebar";
 
 
-const AllBooks = async () => {
+const AllBooksPage = async ({ searchParams }) => {
 
-    const res = await fetch('https://book-flow-seven.vercel.app/booksData.json')
-    const allBooksData = await res.json()
+    const { category } = await searchParams;
+    // console.log(category);
+
+    const res = await fetch('https://book-flow-seven.vercel.app/booksData.json');
+    const allBooksData = await res.json();
+
+    const filterBooks = (category && category !== "All") ? allBooksData.filter(book => book.category.toLowerCase() === category.toLowerCase()) : allBooksData;
 
     return (
-       <div className="w-11/12 mx-auto min-h-screen pt-10 pb-20">
+        <div className="w-11/12 mx-auto min-h-screen py-8 md:py-14">
+            <div className="grid grid-cols-1 md:grid-cols-16 gap-8 items-start">
 
-    <h2 className="text-2xl font-bold mb-5">All Books</h2>
+                <BookSidebar />
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {allBooksData.map(item => <BookCard key={item.id} books={item} />)}
-    </div>
+                <main className="md:col-span-13">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {filterBooks.map((item) => (
+                            <BookCard key={item.id} books={item} />
+                        ))}
+                    </div>
+                </main>
 
-</div>
+            </div>
+        </div>
+
     );
 };
 
-export default AllBooks;
+export default AllBooksPage;

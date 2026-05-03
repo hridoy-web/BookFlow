@@ -1,14 +1,11 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
-import { useRouter } from "next/navigation"
 import { FcGoogle } from "react-icons/fc";
 import { IoMdStar } from "react-icons/io";
 import { toast, ToastContainer } from "react-toastify";
 
 const LoginPage = () => {
-
-    const router = useRouter();
 
     const handleLogin = async (e) => {
 
@@ -17,29 +14,27 @@ const LoginPage = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        const { data, error } = await authClient.signIn.email({  
-           email,
-           password,
+        const { data, error } = await authClient.signIn.email({
+            email,
+            password,
         });
 
-       if(error){
-        toast.warning(error.message);
-        return;
-       } else{
-        toast.success('Login Successful')
-
-        setTimeout(()=>{
-            router.push('/')
-        }, 1000)
-       }
-
+        if (error) {
+            toast.warning(error.message);
+            return;
+        } else {
+            toast.success('Login Successful! Redirecting...')
+            setTimeout(() => {
+                window.location.href = "/";
+            }, 1000);
+        }
     };
 
-   const handleGoogleLogin = async () =>{
-   await authClient.signIn.social({
-    provider: "google",
-   })
-   }
+    const handleGoogleLogin = async () => {
+        await authClient.signIn.social({
+            provider: "google",
+        })
+    }
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-base-200 py-16 px-4">

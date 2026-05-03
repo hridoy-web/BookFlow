@@ -26,6 +26,7 @@ const RegisterPage = () => {
            email,
            image,
            password,
+           callbackURL: "/login"
         });
 
        if(error){
@@ -33,7 +34,6 @@ const RegisterPage = () => {
         return;
        } else{
         toast.success('Registration Successful')
-
         setTimeout(()=>{
             router.push('/login')
         }, 1000)
@@ -44,7 +44,6 @@ const RegisterPage = () => {
    const handleGoogleSignIn = async () =>{
    await authClient.signIn.social({
     provider: "google",
-    callbackURL: "/"
    })
    }
 

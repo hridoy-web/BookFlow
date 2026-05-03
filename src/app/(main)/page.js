@@ -7,7 +7,7 @@ import BookCard from "@/components/Ui/BookCard";
 
 const HomePage = async () => {
 
-  const res = await fetch('https://book-flow-seven.vercel.app/booksData.json')
+  const res = await fetch('https://book-flow-seven.vercel.app/booksData.json', { cache: 'no-store' })
   const allBooksData = await res.json()
   const topBooks = allBooksData.slice(0, 4)
 

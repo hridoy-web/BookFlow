@@ -6,7 +6,7 @@
     "description": "A shocking psychological thriller about a woman's act of violence against her husband.",
     "category": "Story",
     "available_quantity": 5,
-    "image_url": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/FkKqLYVQ/81-JJPDNlx-SL-AC-UF894-1000-QL80.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "description": "A handbook of agile software craftsmanship that helps you write better code.",
     "category": "Tech",
     "available_quantity": 3,
-    "image_url": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/gZ7LNRFx/image.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "description": "A brief but clear introduction to the mysteries of the universe.",
     "category": "Science",
     "available_quantity": 7,
-    "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/whxnSXxh/Astrophysicsfor-Peopleina-Hurry-Bookby-Neilde-Grasse-Tyson.jpg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "description": "A classic story of ambition, love, and the American dream in the 1920s.",
     "category": "Story",
     "available_quantity": 4,
-    "image_url": "https://images.unsplash.com/photo-1543004218-ee141104308e?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/k2RS9F6n/image.png"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "description": "A deep dive into the inner workings of the JavaScript language.",
     "category": "Tech",
     "available_quantity": 2,
-    "image_url": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/9kRHTxyf/image.png"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "description": "A landmark book on cosmology that explains complex ideas about the universe.",
     "category": "Science",
     "available_quantity": 6,
-    "image_url": "https://images.unsplash.com/photo-1532012197267-da84d127e765?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/KpmvNdT3/image.png"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "description": "An inspiring fable about following your dreams and listening to your heart.",
     "category": "Story",
     "available_quantity": 10,
-    "image_url": "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/nNtRJTnf/image.png"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "description": "A practical guide to mastering React and building modern web applications.",
     "category": "Tech",
     "available_quantity": 8,
-    "image_url": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/2YNPY21Z/image.png"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "description": "A revolutionary book that changed how we view evolution and biology.",
     "category": "Science",
     "available_quantity": 4,
-    "image_url": "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/wF1sqSKx/image.png"
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "description": "A nostalgic story of loss and sexuality in 1960s Tokyo.",
     "category": "Story",
     "available_quantity": 3,
-    "image_url": "https://images.unsplash.com/photo-1474932430478-3a7fb908310c?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/RptnMwwN/image.png"
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "description": "Tips and tricks for professional developers to improve their craft.",
     "category": "Tech",
     "available_quantity": 5,
-    "image_url": "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/LyrCtR4/image.png"
   },
   {
     "id": 12,
@@ -105,6 +105,6 @@
     "description": "A masterpiece exploration of the evolution of the universe and human civilization.",
     "category": "Science",
     "available_quantity": 9,
-    "image_url": "https://images.unsplash.com/photo-1506318137071-a8e063b4bc04?q=80&w=800&auto=format&fit=crop"
+    "image_url": "https://i.ibb.co.com/LyrCtR4/image.png"
   }
 ]

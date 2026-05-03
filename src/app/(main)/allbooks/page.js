@@ -4,7 +4,7 @@ import AllBooksData from "@/components/Ui/AllBooksData";
 const AllBooksPage = async ({ searchParams }) => {
     const { category } = await searchParams;
 
-    const res = await fetch('https://book-flow-seven.vercel.app/booksData.json');
+    const res = await fetch('https://book-flow-seven.vercel.app/booksData.json', { cache: 'no-store' });
     const allBooksData = await res.json();
 
     return (

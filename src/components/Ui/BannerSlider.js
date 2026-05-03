@@ -78,7 +78,7 @@ const BannerSlider = () => {
                    Explore a vast collection of books across various categories and start your digital reading journey today.
                 </p>
                 <Link href={'/allbooks'}>
-                  <button className="btn btn-lg rounded-full bg-linear-to-r from-violet-500 to-pink-500 text-white border-none shadow-xl hover:scale-95 px-12">
+                  <button className="btn btn-lg rounded-full bg-linear-to-r from-violet-500 to-pink-500 text-white border-none shadow-xl hover:scale-95 duration-300 transition-all px-12">
                     Explore Now
                   </button>
                 </Link>

@@ -60,7 +60,7 @@ const ProfileUpdateModal = () => {
                                         type="url"
                                         name="image"
                                         placeholder="Enter image URL"
-                                        className="input input-bordered focus:border-primary w-full pl-10"
+                                        className="input input-bordered focus:border-primary w-full"
                                         required
                                     />
                                 </div>

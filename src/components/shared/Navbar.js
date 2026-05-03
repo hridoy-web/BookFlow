@@ -53,15 +53,27 @@ const Navbar = () => {
         {user && (
           <div className="navbar-end">
             <div className="dropdown dropdown-end ">
-              <div tabIndex={0} role="button" className="m-1 cursor-pointer avatar avatar-online ring-primary ring-offset-base-50 rounded-full ring-1 ring-offset-2">
-                <Image
-                  src={user?.image}
-                  alt={user?.name}
-                  width={48}
-                  height={48}
-                className="object-cover"
-                />
-              </div>
+              <div 
+        tabIndex={0} 
+        role="button" 
+        className="btn btn-ghost btn-circle avatar online shadow-md border-2 border-primary"
+      >
+        <div className="w-10 md:w-12 rounded-full bg-neutral text-neutral-content flex items-center justify-center overflow-hidden">
+          {user?.image ? (
+            <Image
+              src={user?.image}
+              alt={user?.name}
+              width={48}
+              height={48}
+              className="aspect-square object-cover"
+            />
+          ) : (
+            <span className="text-xl font-bold uppercase">
+              {user?.name?.charAt(0)}
+            </span>
+          )}
+        </div>
+      </div>
 
               <ul
                 tabIndex={0}

@@ -14,6 +14,7 @@ const AllBooksPage = async ({ searchParams }) => {
 
     return (
         <div className="w-11/12 mx-auto min-h-screen py-8 md:py-14">
+            
             <div className="grid grid-cols-1 md:grid-cols-16 gap-8 items-start">
 
                 <BookSidebar />

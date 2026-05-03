@@ -52,14 +52,14 @@ const Navbar = () => {
 
         {user && (
           <div className="navbar-end">
-            <div className="dropdown dropdown-end">
-              <div tabIndex={0} role="button" className="m-1 cursor-pointer">
+            <div className="dropdown dropdown-end ">
+              <div tabIndex={0} role="button" className="m-1 cursor-pointer avatar avatar-online ring-primary ring-offset-base-50 rounded-full ring-1 ring-offset-2">
                 <Image
                   src={user?.image}
                   alt={user?.name}
                   width={48}
                   height={48}
-                  className="border-2 border-blue-500 rounded-full"
+                className="object-cover"
                 />
               </div>
 

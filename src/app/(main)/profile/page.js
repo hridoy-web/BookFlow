@@ -10,13 +10,14 @@ const ProfilePage = () => {
     return (
         <div className="min-h-[80vh] flex flex-col items-center justify-center py-10">
             <div className="bg-base-200 p-8 border border-gray-200 rounded-3xl shadow-xl flex flex-col items-center w-full max-w-md" >
-                <div className="mb-6">
+
+                <div className="mb-6 rounded-full avatar avatar-online">
                     <Image
-                        src={user?.image || "https://i.ibb.co.com/8gt6Mv0/user.png"}
-                        alt={user?.name || "User"}
+                        src={user?.image}
+                        alt={user?.name}
                         width={48}
                         height={48}
-                        className="border-4 border-blue-500 rounded-full shadow-xl"
+                        className=" ring-primary ring-offset-base-50 w-24 rounded-full ring-1 ring-offset-2"
                     />
                 </div>
 
